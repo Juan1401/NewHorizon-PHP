@@ -117,5 +117,3 @@ END;
 $$;
 
 --SELECT * FROM obtener_pacientes_por_fecha ('2014-08-01','2014-08-31');
-
-https://youtube.com/playlist?list=PL-6S8_azQ-MpM0BaKz0VPtnczB6MiOflq&si=dckJMLH7NewVCiba
