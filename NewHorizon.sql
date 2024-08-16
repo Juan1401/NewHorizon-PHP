@@ -1,4 +1,38 @@
-29.Realiza una función con PL/SQL que retorne la cantidad de pacientes que ingresaron a la clínica 
+CREATE TABLE empresas_juan (
+empresa_id character(2),
+descripcion varchar (150)
+);
+
+alter table empresas_juan
+  add primary key (empresa_id);
+
+INSERT INTO empresas_juan VALUES ( '01', 'Empresa_de_Juan' );
+
+CREATE TABLE fac_facturas_juan (
+empresa_id character(2),
+prefijo varchar (3),
+factura_fiscal integer
+-- ,
+--   primary key(empresa_id,prefijo,factura_fiscal),
+--   CONSTRAINT fk_empresa_id FOREIGN KEY (empresa_id) REFERENCES empresas_juan(empresa_id)
+);
+
+ALTER TABLE fac_facturas_juan ADD COLUMN fecha_registro timestamp without time zone	;
+ 
+21.
+ALTER TABLE fac_facturas_juan ADD primary key(empresa_id,prefijo,factura_fiscal);
+22.
+ALTER TABLE fac_facturas_juan ADD CONSTRAINT fk_empresa_id FOREIGN KEY (empresa_id) REFERENCES empresas_juan(empresa_id);
+23.
+INSERT INTO empresas_juan VALUES ( '01', 'Empresa_de_Juan' );
+24.
+UPDATE fac_facturas_juan SET fecha_registro = '2024-08-15' WHERE empresa = '01' AND prefijo 'F4' AND factura_fiscal = '54878';
+25.
+DELETE FROM fac_facturas_juan WHERE fecha_registro::date BETWEEN '2014-01-01' AND '2014-01-15';
+26.
+ALTER TABLE fac_facturas ADD CONSTRAINT fk_empresa_id FOREIGN KEY (empresa_id) REFERENCES empresas (empresa_id);
+
+27.Realiza una función con PL/SQL que retorne la cantidad de pacientes que ingresaron a la clínica 
 durante el año 2014 y cuya edad al momento del ingreso no sea mayor a 15 años.
 
 
@@ -49,7 +83,7 @@ $$ LANGUAGE plpgsql;
 
 --SELECT contar_pacientes_menores_2014();
 
-30.Realiza un procedimiento con PL/SQL que retorne la siguiente información: Ingreso, fecha_ingreso, 
+28.Realiza un procedimiento con PL/SQL que retorne la siguiente información: Ingreso, fecha_ingreso, 
 Identificación del paciente, Nombre completo del paciente; donde la fecha de ingreso corresponda al mes de 
 septiembre del año 2014. El procedimiento debe recibir variables fecha1 y fecha2.
 
