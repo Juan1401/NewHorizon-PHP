@@ -27,10 +27,10 @@ if ( $donaciones == "y" ) {
         echo "\n";
 
     }
-}
-elseif ($donaciones == "n"){
-    echo("Esta bien, lo revisaremos en otro momento.");
-    echo "\n";
-
-}
+    }elseif ($donaciones == "n"){
+        echo("Esta bien, lo revisaremos en otro momento.");
+        echo "\n";
+    }else{
+        echo ("Comando invalido!");
+    }
 ?>
