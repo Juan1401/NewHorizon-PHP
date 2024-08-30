@@ -1,6 +1,5 @@
 <?php
 //RETO DE CUANTOS CAMINOS HAY.
-
 /*
 1.
 PREGUNTAR A QUE TIENDA QUIERO LLEGAR POR MEDIO DE UN NÚMERO.
@@ -8,41 +7,36 @@ PREGUNTAR A QUE TIENDA QUIERO LLEGAR POR MEDIO DE UN NÚMERO.
 GUARDARLO EN UNA VARIABLE
 3. 
 El programa debe de decirme cuantos caminos hay para llegar desde la 
-primeta tienda hasta la seleccioana por el usuario.
+primera tienda hasta la seleccioana por el usuario.
+*/
+
+/* SECUENCIA
+2 -> 1
+3 -> 2
+4 -> 3
+5 -> 5
+6 -> 8
+7 -> 13
+8 -> 21
 */
 
 //a nivel de codigo creo que tengo que realizar un contador por que 
 //la condidición es iniciar en 1.
 
+// $tienda_usuario = readline("A qué número de tienda deseas llegar? ");
 
-$tienda_usuario = readline("A qué número de tienda deseas llegar? ");
+/*
+a sucesión de Fibonacci se trata de una serie infinita de números naturales que empieza con un 0 y un 1 y continúa añadiendo números que son la suma de los dos anteriores:
+*/
+//Lo saque de un comentario - no pude a la primera.
+$tienda_usuario = 8;
+$aux = 0;
+$result = 1;
+for ($i=1; $i < $tienda_usuario; $i++) { 
 
-$ultimo = array(1);
-
-for($i = 1; $i < $tienda_usuario; $i++) {
-   
-   
-    $conteo_arreglo = $i - 1;  //2
-    $posibilidades = $i + $ultimo[$conteo_arreglo]; 
-
-    array_push($ultimo, $posibilidades); //4
-    print_r($ultimo);
-    echo("\n");
-
-    // echo("esto es posibilidades: " . $posibilidades);
-    echo("\n");
+    $result = $result + $aux;
+    $aux = $result - $aux;
 }
-
-// for( $i = 1; $i<$tienda_usuario;  $i ++ ){
-    
-
-//         $veces = $i + el que se almcene de ultimo ;
-
-//     echo("esto es veces: " . $veces);
-//     echo("\n");
-
-//     echo("\n");
-    
-// }
+echo $result;
 
 ?>
