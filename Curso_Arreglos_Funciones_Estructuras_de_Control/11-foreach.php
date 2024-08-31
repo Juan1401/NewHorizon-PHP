@@ -7,7 +7,7 @@ $tiendita_de_cafe = array(
     "Mocca" => 24
 );
 
-//VARIABLE A ITERAR AS VALOR QUE VOY A OPTENER DE ESA ITERACION
+//VARIABLE A ITERAR as VALOR QUE VOY A OBTENER DE ESA ITERACION
 foreach($tiendita_de_cafe as $price  )
 {
     echo "El cafe en cuestión cuesta $$price USD \n";
@@ -21,9 +21,6 @@ foreach($tiendita_de_cafe as $cafe => $price  )
     echo "El cafe en $cafe cuesta $$price USD \n";
     echo "\n"; 
 }
-
-
-
 
 
 ?>
