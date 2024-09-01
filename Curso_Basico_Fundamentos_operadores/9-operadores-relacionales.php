@@ -70,7 +70,7 @@ echo("\n");
 // OPERADOR NAVE ESPACIAL <=>
 echo("OPERADOR NAVE ESPACIAL" . "\n");
 
-//devuelve -1 si el valor de la izquierda es menor que el que esta a la izquieda
+//devuelve -1 si el valor de la izquierda es menor que el que esta a la derecha
 echo 1 <=> 2;
 echo("\n");
 
