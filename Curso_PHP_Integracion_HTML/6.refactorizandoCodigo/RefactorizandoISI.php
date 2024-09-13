@@ -52,11 +52,11 @@ $tabla_del_9 = [];
     <ul></ul>
 
     <ul>
-        <?php  for ($i=0; $i < 9 ; $i++) { 
+        <?php  for ($i=0; $i < 9 ; $i++) {
 
             echo "<li>". "9 x 1 = " .( 9 *($i + 1) ). "</li>";
 
-        }  
+        }
         ?>
     </ul>
  
