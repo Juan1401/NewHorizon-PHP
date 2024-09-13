@@ -1,4 +1,10 @@
 
+<?php
+
+$Gatitos = ["MrMichi","Pelusa","Zafiro","Negrito"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,13 +25,13 @@
     <ul> 
         <?php for ($i = 0; $i < 10 ; $i++): ?>
 
-            <li><?= $i ?> <li>
+            <li><?= $i ?> </li>
 
         <?php endfor; ?>
 
         <?php while(false): ?>
 
-            <li>Infinitooo 🫠🫠<li>
+            <li>Infinitooo 🫠🫠</li>
 
         <?php endwhile ?>
     <ul>
@@ -33,9 +39,10 @@
     <ul>
             <!-- HACER EL FOREACH PARA LISTAR UN ARREGLO. -->
 
+            <?php foreach( $Gatitos as $lista ):   ?>
+                <li> <?= $lista ?> </li>
+              <?php endforeach; ?>
     <ul>
-
-
 
   </body>
 </html>
