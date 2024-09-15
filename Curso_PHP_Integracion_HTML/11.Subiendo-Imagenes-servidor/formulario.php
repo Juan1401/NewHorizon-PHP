@@ -15,26 +15,21 @@
     <title>Envio de Imagenes</title>
   </head>
   <body class="d-flex vw-100 vh-100 align-items-center justify-content-center">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
 
   <form action="./server.php" method="post" enctype="multipart/form-data">
-
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre:</label>
       <input type="text" class="form-control" name="nombre">
     </div>
-
     <div class="mb-3">
       <label for="image" class="form-label">Imagen:</label>
       <input type="file" class="form-control" name="image">
     </div>
-
     <div class="mb-3">
       <button type="submit" class="btn btn-outline-primary" >Mandar Formulario</button>
     </div>
 </form>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
 
   </body>
 </html>
