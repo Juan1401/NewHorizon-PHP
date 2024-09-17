@@ -30,9 +30,7 @@ if( isset($_POST["form"]) ){
     else{
       $status = "danger"; 
     }
-
 }
-
 
 ?>
 

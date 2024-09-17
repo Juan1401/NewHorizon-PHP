@@ -4,7 +4,7 @@ require("vendor/autoload.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-function sendMail($subjec,$body,$email,$name, $html=false){
+function sendMail($subject,$body,$email,$name, $html=false){
 
     //Configuración inicial de nuestro servidor de correos - MailTrap
     $phpmailer = new PHPMailer();
@@ -12,8 +12,8 @@ function sendMail($subjec,$body,$email,$name, $html=false){
     $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
     $phpmailer->SMTPAuth = true;
     $phpmailer->Port = 2525;
-    $phpmailer->Username = '314009ac2d1f15';
-    $phpmailer->Password = '********4869';
+    $phpmailer->Username = '560c68f0f91123';
+    $phpmailer->Password = '********2243';
 
     //Añadiendo destinatarios 
     $phpmailer->setFrom('contact@miempresa.com', 'Mi Empresa - Link Games');  //Quien lo envia.
@@ -21,11 +21,18 @@ function sendMail($subjec,$body,$email,$name, $html=false){
 
     //Definiendo el contenido de mi Email
      $phpmailer->isHTML($html);                                  //Set email format to HTML
-     $phpmailer->Subject = $subjec;
+     $phpmailer->Subject = $subject;
      $phpmailer->Body    = $body;
 
     //Mandar el Correo.
-     $phpmailer->send();
+    try {
+        $phpmailer->send();
+        //debug de phpmailer
+        $phpmailer->SMTPDebug = 2;
+    } catch (Exception $e) {
+        echo("*-*");
+        echo "Error al enviar el correo: {$phpmailer->ErrorInfo}";
+    }
 }
 
 
