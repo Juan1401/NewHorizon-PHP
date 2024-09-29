@@ -1,0 +1,11 @@
+{
+    "name": "Juan Jose",
+    "descripcion": "Estudiante PHP",
+    "cousers":{
+        "advanced": ["PHP", "VUEjs"],
+        "basic": ["JSON",  "HTML"]
+    },
+    "example": null,
+    "exampleBoolean": true,
+    "exampleInt": 818
+}

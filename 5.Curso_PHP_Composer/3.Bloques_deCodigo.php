@@ -1,6 +1,6 @@
 
 <?php
-//BLOQUES DE CÓDIGO.
+//BLOQUES DE CÓDIGO - EJEMPLOS.
 
 if (condition) {
     # code...

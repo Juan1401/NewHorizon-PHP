@@ -1,0 +1,24 @@
+{
+    "name": "fa507/5.iniciar-proyecto",
+    "description": "Test Composer",
+    "type": "library",
+    "require": {
+        "nesbot/carbon": "2.72.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.6.21"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Fa507\\5IniciarProyecto\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Juan1401",
+            "email": "jjquitiaquez@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
