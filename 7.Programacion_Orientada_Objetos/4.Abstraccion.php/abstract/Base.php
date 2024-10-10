@@ -1,7 +1,7 @@
 <?php
 
 
-abstract class Base
+abstract class Base1
 {
     public function get()
     {
