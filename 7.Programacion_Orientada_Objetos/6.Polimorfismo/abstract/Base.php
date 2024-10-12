@@ -1,4 +1,7 @@
 <?php
+include 'Guest.php';
+include 'Admin.php';
+include 'User.php';
 
 abstract class Base {
     protected $name;
@@ -12,21 +15,7 @@ abstract class Base {
     }
 }
 
-class Admin extends Base {
-    public function __construct($name) {
-        $this->name = $name;
-    }
-}
 
-class User extends Base {
-    public function __construct($name) {
-        $this->name = $name;
-    }
-}
-
-class Guest extends Base {
-    protected $name = 'invitado';
-}
 
 $guest = new Guest();
 echo $guest->login();
