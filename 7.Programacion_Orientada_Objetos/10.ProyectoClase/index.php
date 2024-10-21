@@ -26,4 +26,4 @@ $countForInstance = $post->countComments();
 echo "Cantidad de comentarios por Instancia de la función: ". $countForInstance;
 echo "<hr>";
 
-print_r($comments);
+print_r($post->getComments());
