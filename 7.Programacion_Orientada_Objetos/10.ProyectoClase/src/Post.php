@@ -4,7 +4,7 @@ namespace App;
 
 class Post
 {
-    protected $comments = [];
+    public $comments = [];
     public function addComment(Comment $comment)
     {
         $this->comments[] = $comment;

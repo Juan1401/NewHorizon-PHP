@@ -20,3 +20,10 @@ $comments = $post->getComments();
 $total_comments = count( $comments );
 
 echo "la cantidad de comentarios es: $total_comments";
+echo "<hr>";
+
+$countForInstance = $post->countComments();
+echo "Cantidad de comentarios por Instancia de la función: ". $countForInstance;
+echo "<hr>";
+
+print_r($comments);
