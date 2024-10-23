@@ -113,8 +113,42 @@
 // }
 
 
+// /**
+//  * Reto #7 ¡Hablemos Pig Latin! (Puerco Latino) 🐷
+//  * PuercoLatino es como el idioma de la “efe”, donde cambiamos las palabras bajo ciertas condiciones. En este caso será así:
+// La primer consonante de una palabra se pasa al final y se agrega la sílaba “ay”.
+// Si una palabra inicia con vocal, se agrega “way” al final.
+// Ejemplos:
+
+// Platzi 👉 Latzipay
+// Abeja 👉 Abeja
+// pide a tu usuario que ingrese una palabra y tradúcela a Pig Latin.
+//  */
+
+//  $palabra = readline("Ingresa una palabra: ");
+//  $primeraletra = $palabra[0];
+
+//  echo $primeraletra;
+
+//  $vocales = array(
+//     'a',
+//     'e',
+//     'i',
+//     'o',
+//     'u'
+//  );
+
+
+//  if (in_array($primeraletra,$vocales) ) {
+//     echo "$palabra"."way";
+// } else {
+//     echo "$palabra"."pay";
+// }
+
+
+
 /**
- * Reto #7 ¡Hablemos Pig Latin! (Puerco Latino) 🐷
+ * Reto #7.1 /nivel de dificultad ¡Hablemos Pig Latin! (Puerco Latino) 🐷
  * PuercoLatino es como el idioma de la “efe”, donde cambiamos las palabras bajo ciertas condiciones. En este caso será así:
 La primer consonante de una palabra se pasa al final y se agrega la sílaba “ay”.
 Si una palabra inicia con vocal, se agrega “way” al final.
@@ -125,10 +159,8 @@ Abeja 👉 Abeja
 pide a tu usuario que ingrese una palabra y tradúcela a Pig Latin.
  */
 
- $palabra = readline("Ingresa una palabra: ");
- $primeraletra = $palabra[0];
-
- echo $primeraletra;
+ $palabra = readline("Ingresa una oración: ");
+ $palabraArray = explode(' ',$palabra);
 
  $vocales = array(
     'a',
@@ -139,11 +171,16 @@ pide a tu usuario que ingrese una palabra y tradúcela a Pig Latin.
  );
 
 
- if (in_array($primeraletra,$vocales) ) {
-    echo "$palabra"."way";
-} else {
-    echo "$palabra"."pay";
+for ($i=0; $i < count($palabraArray) ; $i++) { 
+
+    $primeraletrafor = $palabraArray[$i][0];
+
+    if (   in_array($primeraletrafor,$vocales)   )   
+    {
+        echo "$palabraArray[$i]"."way"; echo ' ';
+    } 
+    else 
+    {
+        echo "$palabraArray[$i]"."pay"; echo ' ';
+    }
 }
-
-
-
