@@ -125,8 +125,6 @@ Abeja 👉 Abeja
 pide a tu usuario que ingrese una palabra y tradúcela a Pig Latin.
  */
 
-use function PHPUnit\Framework\stringContains;
-
  $palabra = readline("Ingresa una palabra: ");
  $primeraletra = $palabra[0];
 
@@ -146,3 +144,6 @@ use function PHPUnit\Framework\stringContains;
 } else {
     echo "$palabra"."pay";
 }
+
+
+
