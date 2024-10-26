@@ -1,1 +1,1 @@
-Implementación de cursos de PHP - Platzi
+Implementación de cursos basicos de PHP - Platzi
