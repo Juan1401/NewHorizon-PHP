@@ -14,4 +14,6 @@ function zorro(){
 
 $function = "zorro";
 
+//zorro();   *por debajo eso significa lo que esta ocuerriendo.
 $function();
+//R/: Zorro no te lo lleves!
