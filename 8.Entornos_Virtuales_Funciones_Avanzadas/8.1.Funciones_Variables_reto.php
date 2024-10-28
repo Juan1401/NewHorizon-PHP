@@ -17,3 +17,5 @@ function getNumber3(){
 }
 
 suma("getNumber2" , "getNumber3");
+
+//R/: 10
