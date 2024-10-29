@@ -1,4 +1,6 @@
 <?php 
+
+//uTILIZACIÓN DE METODOD setcookie para cambiar el background del header.
     setcookie(
         name:"header_color",
         value:"#12373d"
@@ -36,12 +38,12 @@ $color = $_COOKIE["header_color"] ?? "#121f3d";
   </head>
   <body>
 
+  <!-- Obtiene el valor de color para cambiar el background de la pagina.  -->
     <header style="background: <?= $color ?>  "
     >
         
         <img src="logo.webp" alt="Platzi"> 
     </header>
-
 
 
   </body>
