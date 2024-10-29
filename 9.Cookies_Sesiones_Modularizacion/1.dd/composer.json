@@ -1,0 +1,7 @@
+{
+    "name": "jjqh/dd_function",
+    "description": "Ejercicio de Función DD",
+    "require": {
+        "symfony/var-dumper": "^6.0"
+    }
+}
