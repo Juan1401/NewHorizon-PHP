@@ -11,7 +11,7 @@ setcookie(
     httponly: true
 );
 
-    echo "!Cookue creada!";
+    echo "!Cookie creada!";
 }
 
 
