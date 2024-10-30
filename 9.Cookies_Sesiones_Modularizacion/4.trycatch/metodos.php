@@ -34,11 +34,11 @@ try {
     echo "<br>";
 
     //Devuelve un array -> Errores que ocurren por fuera de la del segmento try catch como por ejemplo la función.
-    //Duelve la ruta en donde ocurrio el error.
+    //Duelve la ruta en donde ocurrio el error y duelve el origin de donde ocurrió
     print_r($th->getTrace());
     echo "<br>";
 
 
 
-    
+
 }
