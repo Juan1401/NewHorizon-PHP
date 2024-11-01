@@ -1,6 +1,7 @@
 <?php
 
 //Transforma a una fecha legible un timestamp - RetaxMaster
+// Formato AAAA-MM-DD a texto
 function get_date_from_timestamp(string $timestamp) : string {
     $timestamp = substr($timestamp, 0, 10);
     $numeroDia = date('d', strtotime($timestamp));
