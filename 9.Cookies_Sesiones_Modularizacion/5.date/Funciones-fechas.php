@@ -60,4 +60,4 @@ $date = new DateTime(); //Fecha de Hoy
 $date->modify("+1day + 2months"); // Se le añadieron 1 dia mas 2 meses a la fecha actual.
 echo $date->format("Y-m-d"); //Resultado.
 
-?>    
+?>  
