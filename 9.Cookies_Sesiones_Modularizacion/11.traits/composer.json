@@ -1,0 +1,17 @@
+{
+    "name": "jjqh/11.traits",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Juan1401",
+            "email": "jjquitiaquez@gmail.com"
+        }
+    ],
+    "require": {}
+}
