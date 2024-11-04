@@ -11,19 +11,19 @@ class Connection {
         $this->make_connection();
     }
 
-    private static function getInsances(){
+    public static function getInstance(){
         if(!self::$instance instanceof self)
-        {
             self::$instance = new self();
-        }
+        
+        return self::$instance;
     }
     
     public function get_database_instance(){
         return $this->connection;
     }
 
-    function make_connection(){
-        $server = "phpmyadmin.test"; //Virtual Host asigando para php my admin.
+   private function make_connection(){
+        $server = "phpmyadmin.test"; //Virtual Host asigando para phpmyadmin.
         $database = "finanzas_personales";
         $username = "juaquihu";
         $password = "Naranja-1401";
