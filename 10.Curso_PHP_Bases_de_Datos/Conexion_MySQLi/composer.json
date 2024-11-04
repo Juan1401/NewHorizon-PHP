@@ -9,5 +9,10 @@
             "email": "jjquitiaquez@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Database\\":"database/"
+        }
+    },
     "require": {}
 }
