@@ -6,10 +6,39 @@ use Database\PDO\Connection;
 
     class WithdrawalsController {
 
+        private $connection;
+
+        public function __construct() {
+            $this->connection = Connection::getInstance()->get_database_instance();
+        }
+
         /**
          * Muestra una lista de este recurso
          */
-        public function index() {}
+        public function index() {
+        /** Primera forma de realizar consulta con FETCH */
+            // $stmt = $this->connection->prepare("SELECT * FROM withdrawals");
+            // $stmt->execute();
+
+            // $results = $stmt->fetchAll();
+
+            // foreach ($results as $result) {
+            //    echo "Gastaste ". $result["amount"] . " USD en: ". $result["description"] . "\n";
+            // }
+        
+        /**Segunda Forma 
+         * Esta traera la columna numero 0 del arrego el cual es amount.
+         * Fetch column solo me da un columna y los pone dentro de la variable.
+         * */  
+            $stmt = $this->connection->prepare("SELECT amount, description FROM withdrawals");
+            $stmt->execute();
+            
+            $results = $stmt->fetchAll(\PDO::FETCH_COLUMN,0);
+
+            foreach ($results as $result) {
+                echo "Gastaste $result USD \n";
+            }
+        }
     
         /**
          * Muestra un formulario para crear un nuevo recurso
@@ -20,28 +49,21 @@ use Database\PDO\Connection;
          * Guarda un nuevo recurso en la base de datos
          */
         public function store($data) {
-            // Conexión a la base de datos preparada.
-            $connection = Connection::getInstance()->get_database_instance();
 
-            $stmt = $connection->prepare("INSERT INTO withdrawals (payment_method, type, date, amount, description) VALUES (:payment_method, :type, :date, 
+            $stmt = $this->connection->prepare("INSERT INTO withdrawals (payment_method, type, date, amount, description) VALUES (:payment_method, :type, :date, 
             :amount, :description)");
 
-            $stmt->bindParam(":payment_method", $data['payment_method']);
-            $stmt->bindParam(":type", $data['type']);
-            $stmt->bindParam(":date", $data['date']);
-            $stmt->bindParam(":amount", $data['amount']);
-            $stmt->bindParam(":description", $data['description']);
+            $stmt->bindValue(":payment_method", $data['payment_method']);
+            $stmt->bindValue(":type", $data['type']);
+            $stmt->bindValue(":date", $data['date']);
+            $stmt->bindValue(":amount", $data['amount']);
+            $stmt->bindValue(":description", $data['description']);
 
+            $data['description'] = "Quiero que este este al pedo.";
             $stmt->execute();
 
-        // -- {$data['payment_method']},
-        // -- {$data['type']},
-        // -- '{$data['date']}',
-        // -- {$data['amount']},
-        // -- '{$data['description']}'
-
         }
-        
+
         /**
          * Muestra un único recurso especificado
          */

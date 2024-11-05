@@ -17,15 +17,15 @@ require "vendor/autoload.php";
 //     "description" => "Test"
 // ]);
 
+// $withdrawal_controller = new WithdrawalsController;
+// $withdrawal_controller->store([
+//     "payment_method" => PaymentMethodEnum::CreditCard->value,
+//     "type" => WithdrawalTypeEnum::Purchase->value,
+//     "date" => date("Y-m-d H:i:s"),
+//     "amount" => 50,
+//     "description" => "Como jueguetitos con BindParam"
+// ]);
+
+
 $withdrawal_controller = new WithdrawalsController;
-$withdrawal_controller->store([
-    "payment_method" => PaymentMethodEnum::CreditCard->value,
-    "type" => WithdrawalTypeEnum::Purchase->value,
-    "date" => date("Y-m-d H:i:s"),
-    "amount" => 50,
-    "description" => "Como jueguetitos con BindParam"
-]);
-
-
-
-
+$withdrawal_controller->index();
