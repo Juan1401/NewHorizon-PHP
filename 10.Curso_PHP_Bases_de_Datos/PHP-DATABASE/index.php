@@ -22,8 +22,8 @@ $withdrawal_controller->store([
     "payment_method" => PaymentMethodEnum::CreditCard->value,
     "type" => WithdrawalTypeEnum::Purchase->value,
     "date" => date("Y-m-d H:i:s"),
-    "amount" => 20,
-    "description" => "Compre mucha comida para mis queridos y amados michis."
+    "amount" => 50,
+    "description" => "Como jueguetitos con BindParam"
 ]);
 
 

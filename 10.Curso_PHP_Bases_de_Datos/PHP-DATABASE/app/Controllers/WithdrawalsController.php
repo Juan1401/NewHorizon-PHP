@@ -23,16 +23,22 @@ use Database\PDO\Connection;
             // Conexión a la base de datos preparada.
             $connection = Connection::getInstance()->get_database_instance();
 
-          $stmt = $connection->exec("INSERT INTO withdrawals (payment_method, type, date, amount, description) VALUES (
-            {$data['payment_method']},
-            {$data['type']},
-            '{$data['date']}',
-            {$data['amount']},
-            '{$data['description']}'
-            )");
+            $stmt = $connection->prepare("INSERT INTO withdrawals (payment_method, type, date, amount, description) VALUES (:payment_method, :type, :date, 
+            :amount, :description)");
 
-        echo "Se han insertado $stmt filas en la base de datos.";
+            $stmt->bindParam(":payment_method", $data['payment_method']);
+            $stmt->bindParam(":type", $data['type']);
+            $stmt->bindParam(":date", $data['date']);
+            $stmt->bindParam(":amount", $data['amount']);
+            $stmt->bindParam(":description", $data['description']);
 
+            $stmt->execute();
+
+        // -- {$data['payment_method']},
+        // -- {$data['type']},
+        // -- '{$data['date']}',
+        // -- {$data['amount']},
+        // -- '{$data['description']}'
 
         }
         
