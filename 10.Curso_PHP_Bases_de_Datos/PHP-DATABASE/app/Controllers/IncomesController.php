@@ -2,9 +2,15 @@
 
 namespace App\Controllers;
 
-use Database\MySQLi\Connection;
+use Database\PDO\Connection;
 
     class IncomesController {
+
+        private $connection;
+
+        public function __construct() {
+            $this->connection = Connection::getInstance()->get_database_instance();
+        }
 
         /**
          * Muestra una lista de este recurso
@@ -18,6 +24,7 @@ use Database\MySQLi\Connection;
     
         /**
          * Guarda un nuevo recurso en la base de datos
+         * Este método usa la conexión MySQLi para hacer que funcióne cambiar el método.
          */
         public function store($data) {
             $connection = Connection::getInstance()->get_database_instance();

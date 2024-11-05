@@ -26,6 +26,14 @@ require "vendor/autoload.php";
 //     "description" => "Como jueguetitos con BindParam"
 // ]);
 
+//Utilización de FetchALL con método store
+/* $withdrawal_controller = new WithdrawalsController;
+$withdrawal_controller->index(); */
 
+//Utilización de Fetch con metodo Show
 $withdrawal_controller = new WithdrawalsController;
-$withdrawal_controller->index();
+$withdrawal_controller->show(1);
+
+//Utilización de Fetch para traer 
+$withdrawal_controller = new WithdrawalsController;
+$withdrawal_controller->show(1);
