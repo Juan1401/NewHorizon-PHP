@@ -38,6 +38,20 @@ use Database\PDO\Connection;
             foreach ($results as $result) {
                 echo "Gastaste $result USD \n";
             }
+
+        /** Tercera Forma 
+         * Esta forma sirve para de que manera estetica le mandemos una variable no debida por medio del parametro bindColumn
+        */
+
+        // $stmt = $this->connection->prepare("SELECT * FROM incomes");
+        // $stmt->execute();
+
+        // $stmt->bindColumn("amount", $amount);
+        // $stmt->bindColumn("description", $description);
+
+        // while($stmt->fetch())
+        //     echo "Ganaste $amount USD en: $description \n";
+
         }
     
         /**
@@ -74,10 +88,15 @@ use Database\PDO\Connection;
                 ":id" => $id
             ]);
 
+            /**Para que no me devuelva todos los indices asocitivos al consultarlo con el vardump */
+            // $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+
             $result = $stmt->fetch();
 
             echo "El registro con id $id dice que te gastaste {$result['amount']} 
             USD en {$result['description']}";
+
+            var_dump($result);
         }
     
         /**

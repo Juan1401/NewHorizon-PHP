@@ -44,9 +44,9 @@ require "vendor/autoload.php";
 /* $withdrawal_controller = new WithdrawalsController;
 $withdrawal_controller->index(); */
 
-//Utilización de Fetch con metodo Show
-/*$withdrawal_controller = new WithdrawalsController;
-$withdrawal_controller->show(1);*/
+/*Utilización de Fetch con metodo Show */
+// $withdrawal_controller = new WithdrawalsController;
+// $withdrawal_controller->show(1);
 
 /*Utilización de Fetch para traer varios registros. */
 $withdrawal_controller = new IncomesController;
