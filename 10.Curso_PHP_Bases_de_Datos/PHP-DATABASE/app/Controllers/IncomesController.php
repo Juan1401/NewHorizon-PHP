@@ -15,7 +15,16 @@ use Database\PDO\Connection;
         /**
          * Muestra una lista de este recurso
          */
-        public function index() {}
+        public function index() {
+
+            $stmt = $this->connection->prepare("SELECT * FROM incomes");
+            $stmt->execute();
+
+            while ($row = $stmt->fetch()) {
+                echo "Ganaste " . $row["amount"] . "USD en: " . $row["description"] . "\n";
+             }
+
+        }
     
         /**
          * Muestra un formulario para crear un nuevo recurso
