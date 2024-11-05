@@ -28,7 +28,7 @@ use Database\MySQLi\Connection;
             {$data['type']},
             '{$data['date']}',
             {$data['amount']},
-            '{$data['description']}',
+            '{$data['description']}'
             );");
         }
     
