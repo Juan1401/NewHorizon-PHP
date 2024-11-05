@@ -27,7 +27,23 @@ use Database\PDO\Connection;
          * Este método usa la conexión MySQLi para hacer que funcióne cambiar el método.
          */
         public function store($data) {
-            $connection = Connection::getInstance()->get_database_instance();
+
+            //Refactorización de Código a PDO
+            $stmt = $this->connection->prepare("INSERT INTO incomes(payment_method, type, date, 
+            amount, description) VALUES (:payment_method, :type, :date, 
+            :amount, :description)");
+
+            $stmt->bindParam(":payment_method", $data['payment_method']);            
+            $stmt->bindParam(":type", $data['type']);          
+            $stmt->bindParam(":date", $data['date']);
+            $stmt->bindParam(":amount", $data['amount']);           
+            $stmt->bindParam(":description", $data['description']);
+
+            $stmt->execute();
+
+
+            /**Forma 1 -> bindParam de MySQLi */
+            /*$connection = Connection::getInstance()->get_database_instance();
 
             $stmt =  $connection->prepare("INSERT INTO incomes(payment_method, type, date, 
             amount, description) VALUES (?,?,?,?,?);");
@@ -45,12 +61,7 @@ use Database\PDO\Connection;
 
             echo "Se han insertado {$stmt->affected_rows} filas en la base de datos";
 
-        //     {$data['payment_method']},
-        //     {$data['type']},
-        //     '{$data['date']}',
-        //     {$data['amount']},
-        //     '{$data['description']}'
-        //     );");
+            */
         }
     
         /**
