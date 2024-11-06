@@ -112,10 +112,28 @@ use Database\PDO\Connection;
         /**
          * Elimina un recurso específico de la base de datos
          */
-        public function destroy() {}
-        
+        public function destroy($id) {
+
+         $this->connection->beginTransaction();
+
+         $stmt = $this->connection->prepare(" DELETE FROM withdrawals WHERE id = :id ");
+
+         $stmt->execute([
+            ":id" => $id
+         ]);
+
+         $sure = strtolower(readline("¿De verdad quieres eliminar este registro? "));
+
+         if ($sure == 'no') {
+             //Devuelve los cambios
+             $this->connection->rollback();
+         } else {
+             //Ejecuta La sentencia SQL.
+             $this->connection->commit();
+         }
+         
+        }
     }
-    
     /*
     
     index - Display a listing of the resource.

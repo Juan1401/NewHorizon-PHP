@@ -94,7 +94,7 @@ use Database\PDO\Connection;
         public function destroy($id) {
 
             //Inicia trancción
-            $this->connection->beginTransaccion();
+            $this->connection->beginTransaction();
 
             $stmt = $this->connection->prepare("DELETE FROM incomes WHERE id = :id ");
 
@@ -111,9 +111,7 @@ use Database\PDO\Connection;
                 //Ejecuta La sentencia SQL.
                 $this->connection->commit();
             }
-        
         }
-        
     }
     
     /*
