@@ -107,8 +107,19 @@ use Database\PDO\Connection;
         /**
          * Actualiza un recurso específico en la base de datos
          */
-        public function update() {}
-    
+        public function update($id, $amount, $description ) {
+            
+            $stmt = $this->connection->prepare(" UPDATE withdrawals SET description = :description, amount = :amount 
+                WHERE  id =  :id ");
+            
+            $stmt->execute([
+
+                ":id" => $id,
+                ":description" => $description,
+                ":amount" => $amount
+            ]);
+
+        }
         /**
          * Elimina un recurso específico de la base de datos
          */

@@ -56,7 +56,13 @@ $withdrawal_controller->index(); */
 // $withdrawal_controller = new IncomesController;
 // $withdrawal_controller->destroy(4);
 
-
 /*Utilización de Destroy para eliminar registros. - WITHDRAWALS*/
+// $withdrawal_controller = new WithdrawalsController;
+// $withdrawal_controller->destroy(2);
+
+/**Utlizanciónd de Método para Actualizar un registro */
 $withdrawal_controller = new WithdrawalsController;
-$withdrawal_controller->destroy(2);
+$withdrawal_controller->update(1,818,'Prueba Metodo Actualizar');
+
+$withdrawal_controller = new IncomesController;
+$withdrawal_controller->update(1,818,'Prueba Metodo Actualizar');
