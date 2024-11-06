@@ -91,7 +91,28 @@ use Database\PDO\Connection;
         /**
          * Elimina un recurso específico de la base de datos
          */
-        public function destroy() {}
+        public function destroy($id) {
+
+            //Inicia trancción
+            $this->connection->beginTransaccion();
+
+            $stmt = $this->connection->prepare("DELETE FROM incomes WHERE id = :id ");
+
+            $stmt->execute([
+                ":id" => $id
+            ]);
+
+            $sure = strtolower(readline("¿De verdad quieres eliminar este registro? "));
+
+            if ($sure == 'no') {
+                //Devuelve los cambios
+                $this->connection->rollback();
+            } else {
+                //Ejecuta La sentencia SQL.
+                $this->connection->commit();
+            }
+        
+        }
         
     }
     

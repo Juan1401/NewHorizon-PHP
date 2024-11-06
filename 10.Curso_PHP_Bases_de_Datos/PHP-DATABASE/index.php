@@ -49,5 +49,9 @@ $withdrawal_controller->index(); */
 // $withdrawal_controller->show(1);
 
 /*Utilización de Fetch para traer varios registros. */
+// $withdrawal_controller = new IncomesController;
+// $withdrawal_controller->index();
+
+/*Utilización de Destroy para eliminar registros. */
 $withdrawal_controller = new IncomesController;
-$withdrawal_controller->index();
+$withdrawal_controller->destroy(5);
