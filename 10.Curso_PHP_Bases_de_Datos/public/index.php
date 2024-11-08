@@ -21,7 +21,10 @@ $router = new RouterHandler;
 switch ($resource) {
 
     case '/':
-        echo "Estás en la front page";
+        
+        //Se agregó para dividir la parte visual de lo lógico.
+        require("../resources/views/index.php");
+
         break;
 
     case "incomes":

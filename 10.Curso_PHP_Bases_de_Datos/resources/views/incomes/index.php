@@ -30,15 +30,31 @@
 
     <h1>Lista de Ingresos</h1>
 
+    <table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Payment Method</th>
+          <th scope="col">Type</th>
+          <th scope="col">Date</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php  foreach($results as $results => $result) :  ?>
+        <tr>
+          <th scope="row"><?= $result["id"] ?> </th>
+          <td><?= $result["payment_method"] ?> </td>
+          <td><?= $result["type"] ?> </td>
+          <td><?= $result["date"] ?> </td>
+          <td><?= $result["amount"] ?> </td>
+          <td><?= $result["description"] ?> </td>
+        </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
 
-    <ul>
-        <?php foreach ($results as $results => $result) : ?>
-
-            <li>Ganaste <?= $result["amount"] ?> USD en  <?= $result["description"] ?> </li>
-
-       <?php endforeach; ?>
-
-    </ul>
 
   </body>
 </html>
