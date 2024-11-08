@@ -36,7 +36,7 @@ switch ($resource) {
     case "withdrawals":
         
         $method = $_POST["method"] ?? "get";
-        $router->set_method($method);
+        $router->set_method($method); 
         $router->set_data($_POST);
         $router->route(WithdrawalsController::class, $id);
         break;

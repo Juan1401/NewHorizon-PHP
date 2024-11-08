@@ -20,16 +20,24 @@ use Database\PDO\Connection;
             $stmt = $this->connection->prepare("SELECT * FROM incomes");
             $stmt->execute();
 
-            while ($row = $stmt->fetch()) {
-                echo "Ganaste " . $row["amount"] . "USD en: " . $row["description"] . "\n";
-             }
+            // //Traer toda la lista con fetch
+            // while ($row = $stmt->fetch()) {
+            //     echo "Ganaste " . $row["amount"] . "USD en: " . $row["description"] . "\n";
+            //  }
+            
+            $results= $stmt->fetchAll();
+
+            require("../resources/views/incomes/index.php");
 
         }
     
         /**
          * Muestra un formulario para crear un nuevo recurso
          */
-        public function create() {}
+        public function create() {
+            require("../resources/views/incomes/create.php");
+
+        }
     
         /**
          * Guarda un nuevo recurso en la base de datos
@@ -49,6 +57,10 @@ use Database\PDO\Connection;
             $stmt->bindParam(":description", $data['description']);
 
             $stmt->execute();
+
+
+            //Despues de que el registró se realice se efecturá redirección al listados de incomes
+            header("location: incomes");
 
 
             /**Forma 1 -> bindParam de MySQLi */
