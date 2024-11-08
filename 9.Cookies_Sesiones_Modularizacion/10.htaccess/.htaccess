@@ -1,14 +1,7 @@
-RewriteEngine On //Habilitamos la sobre-escritura
+RewriteEngine On
 
-RewriteCond %{REQUEST_FILENAME} !-f //Condición para el caso de que no se encuentre el archivo
-RewriteCond %{REQUEST_FILENAME} !-d //Condición para el caso de que no se encuentre el directorio
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
 
 RewriteRule ^(.*)$ index.php?page=$1 [L]
-/**
-Donde: ^(.*)$ es una expresión regular, ^ indica el inicio de la expresión y $ el final
-.*: es la expresión que indica que cualquier caracter puede ser escrito en la url y se puede repetir cualquier cantidad de veces, es decir, que aplicará para cualquier cosa que se escriba en la url
-(): Los parentesis indican que todo lo que se escriba en la url se guarda en una variable que se utilizara luego en la sentencia de la condición, esto se almacena en $1
-index.php?page=$1 : Es la condición de redirección, a donde enviamos al usuario según como lo definamos en le programa. El valor $1 representa la variable donde se almaceno el contenido de la expresión regular que se colocó dentro de los parentesis.
-El page en la condición corresponde a la variable que vamos a pasar al parámetro $_GET
-*/

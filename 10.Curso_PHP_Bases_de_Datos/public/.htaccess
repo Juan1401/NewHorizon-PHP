@@ -1,0 +1,17 @@
+# Habilitar la reescritura de URLs
+RewriteEngine On
+
+# Condición para el caso de que no se encuentre el archivo
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Condición para el caso de que no se encuentre el directorio
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Regla de redirección
+RewriteRule ^(.*)$ index.php?slug=$1 [L]
+
+# Explicación:
+# ^(.*)$ es una expresión regular donde ^ indica el inicio de la cadena y $ el final.
+# .* permite cualquier carácter repetido cualquier número de veces.
+# () agrupa y almacena la expresión en $1.
+# index.php?page=$1 envía al usuario a index.php con el valor de $1 en $_GET['page'].
