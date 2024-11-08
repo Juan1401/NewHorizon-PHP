@@ -20,7 +20,7 @@ use Database\PDO\Connection;
             $stmt = $this->connection->prepare("SELECT * FROM incomes");
             $stmt->execute();
 
-            // //Traer toda la lista con fetch
+            /**Traer toda la lista con fetch */
             // while ($row = $stmt->fetch()) {
             //     echo "Ganaste " . $row["amount"] . "USD en: " . $row["description"] . "\n";
             //  }
@@ -46,8 +46,8 @@ use Database\PDO\Connection;
         public function store($data) {
 
             //Refactorización de Código a PDO
-            $stmt = $this->connection->prepare("INSERT INTO incomes(payment_method, type, date, 
-            amount, description) VALUES (:payment_method, :type, :date, 
+            $stmt = $this->connection->prepare("INSERT INTO incomes(payment_method,
+             type, date, amount, description) VALUES (:payment_method, :type, :date, 
             :amount, :description)");
 
             $stmt->bindParam(":payment_method", $data['payment_method']);            

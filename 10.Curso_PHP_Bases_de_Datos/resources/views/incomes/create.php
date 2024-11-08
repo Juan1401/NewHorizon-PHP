@@ -62,16 +62,9 @@
       </div>
 
       <!-- Para saber a método nos estamos refiriendo -->
-      <input type="hidden" name="method" values="post"> 
+      <input type="hidden" name="method" value="post">
 
       <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
-
-
-
-
-
-
-
   </body>
 </html>
