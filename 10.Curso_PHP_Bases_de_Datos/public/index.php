@@ -14,6 +14,8 @@ $resource = $slug[0] == "" ? "/" : $slug[0];
 $id = $slug[1] ?? null;
 
 // incomes/1
+// Instancia del router
+$router = new RouterHandler;
 
 
 switch ($resource) {
@@ -23,15 +25,20 @@ switch ($resource) {
         break;
 
     case "incomes":
-        
-        echo "Estás en incomes";
+    
+        $method = $_POST["method"] ?? "get";
+        $router->set_method($method);
+        $router->set_data($_POST);
+        $router->route(IncomesController::class, $id);
 
         break;
 
     case "withdrawals":
         
-        echo "Estás en withdrawals";
-
+        $method = $_POST["method"] ?? "get";
+        $router->set_method($method);
+        $router->set_data($_POST);
+        $router->route(WithdrawalsController::class, $id);
         break;
     
     default:
